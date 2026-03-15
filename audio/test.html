@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Test</title>
+</head>
+<body>
+    <h1>Audio Test</h1>
+    <h2>Test Simple MP3</h2>
+    <audio controls src="test_simple.mp3"></audio>
+    
+    <h2>Test Verbose MP3</h2>
+    <audio controls src="test_verbose.mp3"></audio>
+    
+    <h2>Latest Welcome MP3</h2>
+    <audio controls src="welcome_ANDROID-Redmi_Note_11S_5G-xemk_1773248422719.mp3"></audio>
+    
+    <script>
+        document.querySelectorAll('audio').forEach((audio, index) => {
+            audio.addEventListener('loadedmetadata', () => {
+                console.log(`Audio ${index + 1} duration:`, audio.duration);
+            });
+            audio.addEventListener('error', (e) => {
+                console.error(`Audio ${index + 1} error:`, e);
+            });
+        });
+    </script>
+</body>
+</html>
